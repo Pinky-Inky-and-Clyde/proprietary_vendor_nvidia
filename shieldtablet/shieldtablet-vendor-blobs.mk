@@ -35,8 +35,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/bin/wpa_supplicant.sh:system/bin/wpa_supplicant.sh \
     vendor/nvidia/shieldtablet/proprietary/etc/enctune.conf:system/etc/enctune.conf \
     vendor/nvidia/shieldtablet/proprietary/etc/firmware/bcm43241.hcd:system/etc/firmware/bcm43241.hcd \
-    vendor/nvidia/shieldtablet/proprietary/etc/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
-    vendor/nvidia/shieldtablet/proprietary/etc/firmware/bcm4330.hcd:system/etc/firmware/bcm4330.hcd \
     vendor/nvidia/shieldtablet/proprietary/etc/firmware/BCM43341A0_001.001.030.0015.0000.hcd:system/etc/firmware/BCM43341A0_001.001.030.0015.0000.hcd \
     vendor/nvidia/shieldtablet/proprietary/etc/firmware/BCM43341B0_002.001.014.0008.0011.hcd:system/etc/firmware/BCM43341B0_002.001.014.0008.0011.hcd \
     vendor/nvidia/shieldtablet/proprietary/etc/firmware/bcm4335.hcd:system/etc/firmware/bcm4335.hcd \

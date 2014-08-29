@@ -106,7 +106,11 @@ chmod 0664 /sys/devices/platform/host1x/gk20a.0/blcg_enable
 
 
 # loop through thermal zones
-cdevs=( 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 )
+cdevs=( 0  1  2  3  4  5  6  7  8  9
+       10 11 12 13 14 15 16 17 18 19
+       20 21 22 23 24 25 26 27 28 29
+       30 31 32 33 34 35 36 37 38 39
+       40 41 42 43 44 45 46 47 48 49)
 skin_temp=""
 for tz in /sys/class/thermal/thermal_zone*
 do
@@ -124,20 +128,22 @@ do
         do
             cdev_name=`cat ${tz}/cdev${i}/type`
             if [[ "$cdev_name" = "tegra-balanced" || "$cdev_name" = "cpu-balanced" ]]; then
-                setprop NV_THERM_CPU_TRIP ${tz}/trip_point_${i}_temp
+                cdev_trip=`cat ${tz}/cdev${i}_trip_point`
+                setprop NV_THERM_CPU_TRIP ${tz}/trip_point_${cdev_trip}_temp
                 break
             fi
         done
     elif [[ "$zname" = "Tdiode_skin" || ( "$skin_temp" = "" && "$zname" = "therm_est" ) ]]; then
         temp=`cat ${tz}/temp`
-        if [[ $temp -gt 1000 && $temp -lt 190000 ]]; then
+        if [[ $temp -ge 0 && $temp -lt 190000 ]]; then
             skin_temp=${tz}/temp
             setprop NV_THERM_SKIN_TEMP ${skin_temp}
             for i in ${cdevs[@]}
             do
                 cdev_name=`cat ${tz}/cdev${i}/type`
                 if [[ "$cdev_name" = "skin-balanced" ]]; then
-                    setprop NV_THERM_SKIN_TRIP ${tz}/trip_point_${i}_temp
+                    cdev_trip=`cat ${tz}/cdev${i}_trip_point`
+                    setprop NV_THERM_SKIN_TRIP ${tz}/trip_point_${cdev_trip}_temp
                     break
                 fi
             done
