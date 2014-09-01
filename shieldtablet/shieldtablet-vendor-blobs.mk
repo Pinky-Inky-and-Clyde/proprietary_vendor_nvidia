@@ -141,6 +141,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_combinator.so:system/vendor/lib/libgov_combinator.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_force.so:system/vendor/lib/libgov_force.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_generic.so:system/vendor/lib/libgov_generic.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_gpucompute.so:system/vendor/lib/libgov_gpucompute.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_graphics.so:system/vendor/lib/libgov_graphics.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_il.so:system/vendor/lib/libgov_il.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libgov_tbc.so:system/vendor/lib/libgov_tbc.so \
